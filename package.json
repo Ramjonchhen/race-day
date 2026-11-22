@@ -1,0 +1,35 @@
+{
+  "name": "race-day",
+  "version": "1.0.0",
+  "description": "an API for race registration",
+  "scripts": {
+    "clean:dist": "node -e \"require('fs').rmSync('./dist', { recursive: true, force: true })\"",
+    "build": "npm run clean:dist && tsc",
+    "dev:compile": "npm run clean:dist && tsc --watch",
+    "dev:run": "node --env-file=.env.dev --watch dist/index.js",
+    "migration:run": "npm run build && node --env-file=.env.dev node_modules/typeorm/cli.js migration:run --dataSource dist/loaders/database.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ramjonchhen/race-day.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Ramjonchhen/race-day/issues"
+  },
+  "homepage": "https://github.com/Ramjonchhen/race-day#readme",
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/node": "^26.6.6",
+    "typescript": "^6.0.3"
+  },
+  "dependencies": {
+    "express": "^5.3.0",
+    "pg": "^8.23.1",
+    "reflect-metadata": "^0.2.2",
+    "typeorm": "^1.1.3"
+  }
+}

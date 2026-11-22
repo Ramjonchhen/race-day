@@ -1,0 +1,10 @@
+node_modules/
+dist/
+
+# Ignore all environment variable
+.env*
+
+# Skip ignoring the .env.example file
+!.env.example
+
+.DS_Store
