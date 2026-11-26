@@ -49,6 +49,10 @@ export class InitialStructure1794992476311 implements MigrationInterface {
     }
 
     public async down(queryRunner: QueryRunner): Promise<void> {
+        await queryRunner.query("drop table registrations");
+        await queryRunner.query("drop table races");
+        await queryRunner.query("drop table clubs");
+        await queryRunner.query("drop table users");
     }
 
 }

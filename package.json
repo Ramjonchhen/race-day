@@ -7,7 +7,8 @@
     "build": "npm run clean:dist && tsc",
     "dev:compile": "npm run clean:dist && tsc --watch",
     "dev:run": "node --env-file=.env.dev --watch dist/index.js",
-    "migration:run": "npm run build && node --env-file=.env.dev node_modules/typeorm/cli.js migration:run --dataSource dist/loaders/database.js"
+    "migration:run": "npm run build && node --env-file=.env.dev node_modules/typeorm/cli.js migration:run --dataSource dist/loaders/database.js",
+    "migration:revert": "npm run build && node --env-file=.env.dev node_modules/typeorm/cli.js migration:revert --dataSource dist/loaders/database.js"
   },
   "repository": {
     "type": "git",
