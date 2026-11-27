@@ -40,9 +40,9 @@ Why: Available on the core runtime itself
 Rejected: dotenv package, one less package and this external feature is now available on the native itself
 
 ## 9. Node Version Pinning 
-Choice: v26 Major Version through NVM
-Why: v26 is the latest LTS and pinning out to major only to get minor and patch updates
-Rejected: not pinning to latest LTS v26.13.0 as sticking to exact version needs changing the version on the file itself for updates
+Choice: v26 Major Version through NVM / package.json engines options along with .npmrc engine-strict option
+Why: v26 is the latest LTS, and pinning to the major only to get minor and patch updates; also, the package.json engines option along with the .npmrc engine-strict option ensures dependencies get installed only when the specified Node version matches
+Rejected: not pinning to latest LTS v26.13.0, as sticking to an exact version needs changing the version in the file itself for updates
 
 ## 10. PostgreSQL DB Version 
 Choice: v18 Major Version through plain Docker image
