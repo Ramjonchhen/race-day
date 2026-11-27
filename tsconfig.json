@@ -1,0 +1,29 @@
+{
+    "compilerOptions": {
+        // Targeting the latest version of ecmascript code
+        "target": "esnext",
+        // nodenext set the target JS module to the package.json type automatically
+        "module": "nodenext",
+        // enabling TypeScript main check through strict such as possible null or undefined
+        "strict": true,
+        // src becomes the top folder for copying TS files, the build JS output folder structure remains as it is on /src
+        "rootDir": "./src",
+        // compiling the output to a fixed destination dist folder
+        "outDir": "./dist",
+        // verbatimModuleSyntax strictly enforces the output JS module to be exactly as TS module syntax
+        // we will follow ESM module syntax on TS files, our package.json type is commonjs
+        // explicitly turning off verbatimModuleSyntax such that TS file written with ESM can be compiled 
+        // to JS commonjs output
+        "verbatimModuleSyntax": false,
+        // TypeORM is based on old TS experimental decorators so we have to turn it on 
+        "experimentalDecorators": true,
+        // Compiled out Entity JS code loose out on the types, turning emitDecoratorMetadata provides columns type metadata
+        "emitDecoratorMetadata": true,
+        // including the types for node through @types/node as nodejs don't have built in types
+        "types": ["node"]
+    },
+    // only including src TS files
+    "include": [
+        "src/**/*"
+    ],
+}
